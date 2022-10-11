@@ -35,10 +35,14 @@ const Home = () => {
     setIsShowSignUp((isShowSignUp) => !isShowSignUp);
   };
 
+  // const id = key.slice(8, -2);
+  // const header = `'Authorization': 'Token ${id}'`;
   useEffect(() => {
     dispatch(fetchItems({ page }));
     if (key) {
-      dispatch(fetchCarts());
+      const id = key.slice(8, -2);
+      const header = `'Authorization': 'Token ${id}'`;
+      dispatch(fetchCarts(header));
       console.log(items);
     }
     // eslint-disable-next-line
@@ -117,6 +121,7 @@ const Home = () => {
           {/* </h1> */}
           {items.results.length > 0 ? (
             <ul className="listmargin">
+              {/* <h1>{header}</h1> */}
               {items.results.map((item, index) => {
                 return (
                   <Item

@@ -18,10 +18,15 @@ if (window.location.origin === "http://localhost:3000") {
 //   baseURL = "http://127.0.0.1:8000";
 // }
 
+let key = localStorage.getItem(LOGIN_USER_KEY);
+const id = key.slice(8, -2);
+// const header = `'Authorization': 'Token ${id}'`;
+
 const api = axios.create({
   baseURL: baseURL,
   headers: {
     "Content-Type": "application/json",
+    Authorization: "Token " + id,
   },
 });
 
@@ -141,6 +146,8 @@ export default class API {
   getCarts = async () => {
     const carts = await api
       .get("/carts/")
+      // headers: { header },
+      // })
       .then((response) => {
         return response.data;
       })
@@ -150,12 +157,13 @@ export default class API {
     return carts;
   };
 
-  addCarts = async (item_id, id) => {
+  addCarts = async (item_id, id, header) => {
     const savedCart = await api
       .post("/carts/add/", {
         item_id: item_id,
         user_id: id,
         quantity: 1,
+        headers: header,
       })
       .then((response) => {
         return response.data;

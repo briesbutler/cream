@@ -121,8 +121,9 @@ const Item = React.forwardRef((props, ref) => {
     if (key) {
       // ///// console.log("item-key-addcart1");
       const id = key.slice(8, -2);
+      const header = `{'Authorization': 'Token ${id}'}`;
       // dispatch(addCart(item, user));
-      dispatch(addCart(item, id));
+      dispatch(addCart(item, id, header));
       // ///// console.log("item-key-addcart2");
     } else {
       // ///// console.log("item-key-addcart3");
