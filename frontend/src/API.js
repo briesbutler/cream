@@ -19,16 +19,14 @@ if (window.location.origin === "http://localhost:3000") {
 // }
 
 let key = localStorage.getItem(LOGIN_USER_KEY);
-if (key) {
-  const id = key.slice(8, -2);
-}
+// const id = key.slice(8, -2);
 // const header = `'Authorization': 'Token ${id}'`;
 
 const api = axios.create({
   baseURL: baseURL,
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Token " + id,
+    // Authorization: "Token " + key.slice(8, -2),
   },
 });
 
@@ -37,10 +35,12 @@ const api = axios.create({
  */
 api.interceptors.request.use(
   (config) => {
-    if (config.requireToken && localStorage.getItem(LOGIN_USER_KEY)) {
-      config.headers.common["Authorization"] = JSON.parse(
-        localStorage.getItem(LOGIN_USER_KEY)
-      ).token;
+    if (key) {
+      // headers: {
+      // Authorization: "Token " + key.slice(8, -2);
+      // }
+      config.headers.common["Authorization"] = "Token " + key.slice(8, -2);
+      // JSON.parse(localStorage.getItem(LOGIN_USER_KEY)).token;
     }
 
     return config;

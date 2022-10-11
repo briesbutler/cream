@@ -130,20 +130,20 @@ const Shipping = () => {
           </div>
           <br />
           <div className="order">
+            <div className="orderorder">
+              <div className="orderheading">
+                <div className="item-name-head">Item Name</div>
+                <div className="quantity-head">Quantity</div>
+                <div className="item-price-head">Price</div>
+              </div>
+            </div>
             {/* <table className="order"> */}
             {carts &&
               carts.map((cart) => (
-                <div className="orderorder">
-                  <div className="orderheading">
-                    <div className="item-name-head">Item Name</div>
-                    <div className="quantity-head">Quantity</div>
-                    <div className="item-price-head">Price</div>
-                  </div>
-                  <div className="orderdeets">
-                    <div className="item-name">{cart.item.name}</div>
-                    <div className="quantity">{cart.quantity}</div>
-                    <div className="item-price">${cart.item.price}</div>
-                  </div>
+                <div className="orderdeets">
+                  <div className="item-name">{cart.item.name}</div>
+                  <div className="quantity">{cart.quantity}</div>
+                  <div className="item-price">${cart.item.price}</div>
                 </div>
               ))}
             <br />

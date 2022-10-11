@@ -449,13 +449,25 @@ Shipping
 .quantity-head,
 .item-price-head {
   font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.item-name,
+.quantity,
+.item-price {
+  margin-bottom: 10px;
 }
 
 .orderheading,
-.orderdeets,
+.orderdeets {
+  display: flex;
+  justify-content: space-between;
+}
+
 .finalprice {
   display: flex;
   justify-content: space-between;
+  margin-top: -20px;
 }
 
 .forminputs,
