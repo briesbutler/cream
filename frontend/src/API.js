@@ -19,7 +19,9 @@ if (window.location.origin === "http://localhost:3000") {
 // }
 
 let key = localStorage.getItem(LOGIN_USER_KEY);
-const id = key.slice(8, -2);
+if (key) {
+  const id = key.slice(8, -2);
+}
 // const header = `'Authorization': 'Token ${id}'`;
 
 const api = axios.create({
