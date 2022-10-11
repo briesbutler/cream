@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from items.views import ItemList
+from users.views import UserView
+from cart_item.views import CartList, CartView, CartViewSet
+from order_item.views import Order_ItemView
+from order.views import OrderView, OrderCreateView
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
@@ -24,6 +28,15 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
     path('', ItemList.as_view(), name='item_list'),
-    path('', include('items.urls')),
-    path('api/token/', obtain_auth_token, name='')
+    path('item/', include('items.urls')),
+    path('user/', UserView.as_view(), name='user_view'),
+    # path('carts/', include('cart_item.urls')),
+    path('carts/', CartList.as_view(), name='cartlist'),
+    path('carts/add/', CartView.as_view(), name='cartView'),
+    path('carts/update/', include('cart_item.urls')),
+    #  CartViewSet.as_view({'get': 'list'}), name='cartViewSet'),
+    path('orderitem/', Order_ItemView.as_view(), name='order_item_view'),
+    path('orders/', OrderView.as_view(), name='order_view'),
+    path('orders/add/', OrderCreateView.as_view(), name='order_view'),
+    path('dj-rest-token-auth/', obtain_auth_token)
 ]

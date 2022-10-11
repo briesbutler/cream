@@ -8,9 +8,13 @@ import { logger } from "redux-logger";
 import thunk from "redux-thunk";
 
 import { ItemsReducer } from "../items/reducers";
+import { UserReducer } from "../users/reducers";
+import { CartsReducer } from "../carts/reducers";
 
 const rootReducer = combineReducers({
   items: ItemsReducer,
+  users: UserReducer,
+  carts: CartsReducer,
 });
 
 export default function configureStores(preloadedState) {
