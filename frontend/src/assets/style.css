@@ -39,7 +39,7 @@ Navbar
   margin-top: 0px;
   display: flex;
   justify-content: space-between;
-  height: 35px;
+  height: 55px;
   background-color: #e2f6ff;
 }
 
@@ -47,14 +47,18 @@ Navbar
   text-decoration: none;
   color: #4b4b4b;
   margin-left: 10px;
-  margin-top: 0px;
   font-weight: bold;
+  font-size: 27px;
+}
+
+.home-section {
+  padding-top: 2px;
 }
 
 .icecream-icon {
   margin-left: 5px;
   margin-top: 7px;
-  height: 20px;
+  height: 30px;
 }
 
 .loginicon,
@@ -63,10 +67,20 @@ Navbar
   color: #4b4b4b;
   margin-left: 10px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
-  padding-top: 10px;
+  padding-top: 19px;
   display: flex;
+}
+
+.signinicon {
+  font-size: 17px;
+  text-decoration: none;
+  color: #4b4b4b;
+  margin-right: 10px;
+  padding-top: 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .signinspot {
@@ -93,22 +107,11 @@ Navbar
   color: white;
 }
 
-.signinicon {
-  max-height: 23px;
-  text-decoration: none;
-  color: #4b4b4b;
-  margin-right: 10px;
-  padding-top: 10px;
-  font-weight: bold;
-  font-size: 13px;
-  cursor: pointer;
-}
-
 .cart-icon {
   margin-right: 5px;
   margin-left: 7px;
-  margin-top: 7px;
-  height: 20px;
+  margin-top: 11px;
+  height: 28px;
 }
 
 /*
@@ -177,7 +180,7 @@ Sign In
 .login-text,
 .signup-text {
   font-size: 17px;
-  margin-top: -15px;
+  margin-top: -35px;
   margin-bottom: 5px;
   color: #575757;
 }
@@ -296,18 +299,18 @@ Items
 }
 
 .price {
-  margin-top: 95px;
+  margin-top: 85px;
   margin-left: 30px;
   color: #4a4a4a;
 }
 
 .add-button {
-  height: 28px;
-  width: 70px;
+  height: 35px;
+  width: 75px;
   /* padding-top: 3px; */
-  margin-top: 125px;
+  margin-top: 115px;
   background-color: #e4e4e4;
-  border-color: #4a4a4a;
+  border: 1px solid #4a4a4a;
   color: #4a4a4a;
   font-weight: bold;
   border-radius: 5px;
@@ -325,7 +328,7 @@ Items
   height: 28px;
   width: 70px;
   margin: auto;
-  padding-top: 5px;
+  padding-top: 9px;
   display: flex;
   justify-content: space-around;
 }
@@ -365,6 +368,11 @@ Items
 cart
 ************************************/
 
+.cartpage {
+  background-color: #a8c8df;
+  padding-bottom: 10px;
+}
+
 ::marker {
   color: white;
 }
@@ -388,21 +396,26 @@ Footer
 ************************************/
 
 .footer {
-  margin-top: 0px;
-  height: 50px;
+  height: 60px;
   background-color: #e2f6ff;
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  position: sticky;
+  bottom: 0px;
+  border-top: 1px solid #4a4a4a;
 }
 
 .info {
   width: 60%;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 .subtotal {
+  margin-top: auto;
+  margin-bottom: auto;
   color: #4a4a4a;
   font-weight: bold;
+  margin-right: 40px;
 }
 
 .check_cart_section {
@@ -411,7 +424,7 @@ Footer
 }
 
 .check_cart {
-  margin-right: 15px;
+  margin-right: 40px;
   margin-top: auto;
   margin-bottom: auto;
   height: 35px;
@@ -429,12 +442,29 @@ Shipping
 ************************************/
 
 .shippingpage {
-  margin-top: 0px;
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
   background-color: #a8c8df;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.formcolor,
+.forminner {
+  width: 100%;
+}
+
+.totalheading {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  background-color: #90acc4;
+}
+
+.textshipping {
   display: flex;
   justify-content: center;
 }
@@ -452,6 +482,11 @@ Shipping
   margin-bottom: 10px;
 }
 
+.order {
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
 .item-name,
 .quantity,
 .item-price {
@@ -465,9 +500,19 @@ Shipping
 }
 
 .finalprice {
+  border-top: 1px solid #4a4a4a;
   display: flex;
   justify-content: space-between;
-  margin-top: -20px;
+  margin-top: -30px;
+  padding-top: 5px;
+}
+
+.shipinput {
+  width: 100%;
+}
+
+.forminputsinner {
+  width: 40%;
 }
 
 .forminputs,

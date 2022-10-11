@@ -5,6 +5,7 @@ import { getCarts, getSubtotal } from "../reducks/carts/selectors";
 import { deleteCart, fetchCarts } from "../reducks/carts/operations";
 import { addOrder } from "../reducks/order/operations.js";
 import "../assets/style.css";
+import Navbar from "../components/Navbar";
 // import { push } from "connected-react-router";
 const api = new API();
 
@@ -117,15 +118,17 @@ const Shipping = () => {
       {/* <section className="order"> */}
       {/* <div className="heading"></div> */}
       {/* </section> */}
-
       <section className="formcolor">
+        <Navbar />
         <div className="form">
           <div className="formheadings">
-            <div>
-              <h4 className="total">-Order your Items-</h4>
+            <div className="forminner">
+              <h4 className="totalheading">-Order your Items-</h4>
               <h3 className="total">Shipment Details</h3>
               <br />
-              <p>Please Check Your Item and Confirm it</p>
+              <p className="textshipping">
+                Please Check Your Item and Confirm it
+              </p>
             </div>
           </div>
           <br />
@@ -158,10 +161,11 @@ const Shipping = () => {
             {/* </table> */}
           </div>
           <div className="forminputs">
-            <div>
+            <div className="forminputsinner">
               <label>Full Name</label>
               <br />
               <input
+                className="shipinput"
                 type="text"
                 id="name"
                 required
@@ -174,6 +178,7 @@ const Shipping = () => {
               <label>Phone Number</label>
               <br />
               <input
+                className="shipinput"
                 type="text"
                 id="number"
                 required
@@ -186,6 +191,7 @@ const Shipping = () => {
               <label>Street address</label>
               <br />
               <input
+                className="shipinput"
                 type="text"
                 id="address"
                 required
@@ -198,6 +204,7 @@ const Shipping = () => {
               <label>PIN Code</label>
               <br />
               <input
+                className="shipinput"
                 type="text"
                 id="code"
                 required
@@ -210,6 +217,7 @@ const Shipping = () => {
               <label>Apt, suite, unit, etc.</label>
               <br />
               <input
+                className="shipinput"
                 type="text"
                 id="house"
                 required
@@ -222,6 +230,7 @@ const Shipping = () => {
               <label>City</label>
               <br />
               <input
+                className="shipinput"
                 type="text"
                 id="city"
                 required
@@ -234,6 +243,7 @@ const Shipping = () => {
               <label>State</label>
               <br />
               <input
+                className="shipinput"
                 type="text"
                 id="state"
                 required

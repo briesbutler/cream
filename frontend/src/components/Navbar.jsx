@@ -32,7 +32,7 @@ function Navbar({ handleLoginClick }) {
     <div className="navbar">
       <div className="home-section">
         <Link className="home-link" to="/">
-          Cream Feast
+          CreamFeast
         </Link>
         <Link className="icecream-link" to="/">
           <img className="icecream-icon" src={Icon} />

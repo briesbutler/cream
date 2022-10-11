@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../reducks/users/selectors";
 import { getItems } from "../reducks/items/selectors";
 import Navbar from "../components/Navbar";
+import IceCreamHeader from "../assets/img/ice-cream-header.png";
 
 const Cart = () => {
   const selector = useSelector((state) => state);
@@ -21,8 +22,9 @@ const Cart = () => {
   }, []);
 
   return (
-    <>
+    <div className="cartpage">
       <Navbar />
+      <img className="header_img" src={IceCreamHeader} alt="yummy icecream" />
       <ul className="cart-main">
         <li>
           <div className="cart-row">
@@ -44,7 +46,7 @@ const Cart = () => {
           </div>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

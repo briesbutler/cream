@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getUser } from "../reducks/users/selectors";
+import Navbar from "../components/Navbar";
 
 const OrderConfirmation = () => {
   // const selector = useSelector((state) => state);
@@ -10,15 +11,14 @@ const OrderConfirmation = () => {
   // }, []);
   return (
     <div className="shippingpage">
-      <div className="thank">
+      <div className="thank formcolor">
+        <Navbar />
         <div className="heading">
-          <br />
-          <h4 className="total">- Thank you for your order -</h4>
+          <h4 className="total totalheading">- Thank you for your order -</h4>
         </div>
 
         <div className="note">
           <p className="total">
-            <br />
             {/* Thank you for your order <span className="color">{user.user_name}</span>. */}
             We received your request.
             <br />
